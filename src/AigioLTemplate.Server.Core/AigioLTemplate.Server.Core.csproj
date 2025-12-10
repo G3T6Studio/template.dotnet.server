@@ -1,0 +1,150 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net$(DotNet_Version)</TargetFrameworks>
+		<RootNamespace>GameTrainer</RootNamespace>
+		<IsAspireSharedProject>true</IsAspireSharedProject>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<Choose>
+		<When Condition="'$(Configuration)'=='Release'">
+			<PropertyGroup>
+				<IsPackable>true</IsPackable>
+				<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Microsoft.Extensions.Http.Resilience" />
+		<PackageReference Include="Microsoft.Extensions.ServiceDiscovery" />
+		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Runtime" />
+		<PackageReference Include="NLog" />
+		<PackageReference Include="NLog.Web.AspNetCore" />
+		<PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+		<PackageReference Include="MemoryPack" />
+		<PackageReference Include="MemoryPack.Streaming" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+		<PackageReference Include="Scalar.AspNetCore" />
+		<PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" />
+		<PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+		<PackageReference Include="System.IO.Hashing" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="..\..\res\i18n\Core\Resources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+			<LinkBase>Properties</LinkBase>
+			<CustomToolNamespace>AigioLTemplate.Server.Properties</CustomToolNamespace>
+		</EmbeddedResource>
+		<EmbeddedResource Include="..\..\res\i18n\Core\Resources.*.resx">
+			<LinkBase>Properties</LinkBase>
+		</EmbeddedResource>
+		<Compile Include="..\..\res\i18n\Core\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+			<LinkBase>Properties</LinkBase>
+		</Compile>
+	</ItemGroup>
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.Helpers.ProgramMain\AigioL.Common.AspNetCore.Helpers.ProgramMain.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.Bcl\AigioL.Common.Bcl.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.EntityFrameworkCore\AigioL.Common.EntityFrameworkCore.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.FeishuOApi.Sdk\AigioL.Common.FeishuOApi.Sdk.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.JsonWebTokens.Entities\AigioL.Common.JsonWebTokens.Entities.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.JsonWebTokens.Models\AigioL.Common.JsonWebTokens.Models.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.JsonWebTokens.Models.Dtos\AigioL.Common.JsonWebTokens.Models.Dtos.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.JsonWebTokens.Services\AigioL.Common.JsonWebTokens.Services.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.Models.ApiRsp\AigioL.Common.Models.ApiRsp.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.Primitives\AigioL.Common.Primitives.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.ProjectUtils\AigioL.Common.ProjectUtils.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.Repositories\AigioL.Common.Repositories.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.Repositories.EntityFrameworkCore\AigioL.Common.Repositories.EntityFrameworkCore.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.System.IOPath.FileSystem\AigioL.Common.System.IOPath.FileSystem.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.System.Security.Cryptography.Aes\AigioL.Common.System.Security.Cryptography.Aes.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.System.Security.Cryptography.HashAlgorithms\AigioL.Common.System.Security.Cryptography.HashAlgorithms.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.System.Security.Cryptography.RSA\AigioL.Common.System.Security.Cryptography.RSA.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AdminCenter.Entities\AigioL.Common.AspNetCore.AdminCenter.Entities.projitems" Label="Shared" />
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Core\AigioL.Common.AspNetCore.AppCenter.Core.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Core.ClientSide\AigioL.Common.AspNetCore.AppCenter.Core.ClientSide.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Basic.Core\AigioL.Common.AspNetCore.AppCenter.Basic.Core.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Analytics.Core\AigioL.Common.AspNetCore.AppCenter.Analytics.Core.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Ordering.Core\AigioL.Common.AspNetCore.AppCenter.Ordering.Core.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Identity.Core\AigioL.Common.AspNetCore.AppCenter.Identity.Core.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Identity.Core.ClientSide\AigioL.Common.AspNetCore.AppCenter.Identity.Core.ClientSide.projitems" Label="Shared" />
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.SmsSender.Services\AigioL.Common.SmsSender.Services.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.SmsSender.Models\AigioL.Common.SmsSender.Models.projitems" Label="Shared" />
+
+	<Import Condition="Exists('$(MSBuildProjectDirectory)\..\..\ref\serversdk\src\AigioLTemplate.Server.ServerSdk.Constants\AigioLTemplate.Server.ServerSdk.Constants.projitems')" Project="$(MSBuildProjectDirectory)\..\..\ref\serversdk\src\AigioLTemplate.Server.ServerSdk.Constants\AigioLTemplate.Server.ServerSdk.Constants.projitems" Label="Shared" />
+
+	<Import Condition="Exists('$(MSBuildProjectDirectory)\..\..\ref\serversdk\src\GenerateAssemblyXYZAttribute.props')" Project="$(MSBuildProjectDirectory)\..\..\ref\serversdk\src\GenerateAssemblyXYZAttribute.props" />
+	<Import Condition="!Exists('$(MSBuildProjectDirectory)\..\..\ref\serversdk\src\GenerateAssemblyXYZAttribute.props') AND Exists('$(MSBuildProjectDirectory)\..\GenerateAssemblyXYZAttribute.props')" Project="$(MSBuildProjectDirectory)\..\GenerateAssemblyXYZAttribute.props" />
+
+	<Choose>
+		<When Condition="Exists('$(MSBuildThisFileDirectory)..\..\ref\serversdk\src\AssemblyInfo.cs')">
+			<ItemGroup>
+				<Compile Include="$(MSBuildThisFileDirectory)..\..\ref\serversdk\src\AssemblyInfo.Attribute.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)..\..\ref\serversdk\src\AssemblyInfo.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)..\..\ref\serversdk\src\AssemblyInfo.GetSupportedCultures.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)..\..\ref\serversdk\src\AssemblyInfo.Attribute.NeutralResourcesLanguage.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<ItemGroup>
+				<Compile Include="$(MSBuildThisFileDirectory)..\AssemblyInfo.Attribute.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)..\AssemblyInfo.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)..\AssemblyInfo.GetSupportedCultures.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)..\AssemblyInfo.Attribute.NeutralResourcesLanguage.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Core.Resources\AigioL.Common.AspNetCore.AppCenter.Core.Resources.csproj" />
+		<ProjectReference Include="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Identity.UI\AigioL.Common.AspNetCore.AppCenter.Identity.UI.csproj" />
+		<ProjectReference Include="..\..\ref\common\src\AigioL.Common.Primitives.District\AigioL.Common.Primitives.District.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Constants\" />
+	  <Folder Include="Data\Abstractions\" />
+	  <Folder Include="Entities\" />
+	  <Folder Include="Models\" />
+	  <Folder Include="Repositories\Abstractions\" />
+	</ItemGroup>
+
+</Project>

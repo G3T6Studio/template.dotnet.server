@@ -1,0 +1,80 @@
+<Project>
+
+	<PropertyGroup>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<!-- 👇 静态本机编译 & 剪裁 | AOT & Trimmable -->
+	<PropertyGroup Condition="!$(MSBuildProjectName.Contains('UnitTest')) AND !$(MSBuildProjectName.Contains('DllExport.ConsoleTest')) AND $([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">
+		<IsTrimmable>true</IsTrimmable>
+		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+		<EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
+		<EnableAotAnalyzer>true</EnableAotAnalyzer>
+		<IsAotCompatible>true</IsAotCompatible>
+		<PublishAot>true</PublishAot>
+		<!-- 指示发布过程优先于代码执行速度。应用的峰值吞吐量预计会更高，但其他性能指标可能会受到影响 https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/optimizing#optimize-for-size-or-speed -->
+		<OptimizationPreference>Speed</OptimizationPreference>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tasks">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<Choose>
+		<When Condition="$(MSBuildProjectName.Contains('JobScheduler'))">
+			<PropertyGroup>
+				<DefineConstants>$(DefineConstants);INCLUDE_QUARTZ</DefineConstants>
+				<PublishAot>false</PublishAot>
+			</PropertyGroup>
+			<ItemGroup>
+				<PackageReference Include="Quartz.AspNetCore" />
+			</ItemGroup>
+			<ItemGroup>
+				<Using Include="Quartz" />
+				<Using Include="Quartz.AspNetCore" />
+				<Using Include="AigioL.Common.AspNetCore.AppCenter.Services.Abstractions" />
+				<Using Include="AigioL.Common.FeishuOApi.Sdk.Services.Abstractions" />
+				<Using Include="AigioL.Common.Models" />
+				<Using Include="AigioLTemplate.Server.ApiService.Data" />
+			</ItemGroup>
+			<ItemGroup>
+				<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\JobScheduler\*.cs">
+					<LinkBase>Data\Partials\JobScheduler</LinkBase>
+				</Compile>
+			</ItemGroup>
+		</When>
+	</Choose>
+	
+	<Import Condition="Exists('$(MSBuildThisFileDirectory)\..\ref\serversdk\src\GenerateAssemblyXYZAttribute.props')" Project="$(MSBuildThisFileDirectory)\..\ref\serversdk\src\GenerateAssemblyXYZAttribute.props" />
+	<Import Condition="!Exists('$(MSBuildThisFileDirectory)\..\ref\serversdk\src\GenerateAssemblyXYZAttribute.props') AND Exists('$(MSBuildThisFileDirectory)\GenerateAssemblyXYZAttribute.props')" Project="$(MSBuildThisFileDirectory)\GenerateAssemblyXYZAttribute.props" />
+
+	<Choose>
+		<When Condition="Exists('$(MSBuildThisFileDirectory)..\..\ref\serversdk\src\AssemblyInfo.cs')">
+			<ItemGroup>
+				<Compile Include="$(MSBuildThisFileDirectory)..\ref\serversdk\src\AssemblyInfo.Attribute.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)..\ref\serversdk\src\AssemblyInfo.Attribute.NeutralResourcesLanguage.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			<ItemGroup>
+				<Compile Include="$(MSBuildThisFileDirectory)\AssemblyInfo.Attribute.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+				<Compile Include="$(MSBuildThisFileDirectory)\AssemblyInfo.Attribute.NeutralResourcesLanguage.cs">
+					<LinkBase>Properties</LinkBase>
+				</Compile>
+			</ItemGroup>
+		</Otherwise>
+	</Choose>
+
+	<Import Condition="$(MSBuildProjectName.Contains('JobScheduler'))" Project="..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Core.JobScheduler\AigioL.Common.AspNetCore.AppCenter.Core.JobScheduler.projitems" Label="Shared" />
+
+</Project>

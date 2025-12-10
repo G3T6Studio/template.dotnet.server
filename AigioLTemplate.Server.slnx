@@ -1,0 +1,105 @@
+<Solution>
+  <Folder Name="/1.Root/">
+    <File Path=".dockerignore" />
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+    <File Path="ref/common/src/Directory.Packages.props" />
+    <File Path="src/ApiService.Docker.props" />
+    <File Path="src/ApiService.props" />
+    <File Path="src/Directory.Build.props" />
+    <File Path="src/Directory.Build.targets" />
+    <File Path="src/TFM_NETX_ALL.props" />
+    <File Path="src/Version.props" />
+  </Folder>
+  <Folder Name="/1.Root/ISSUE_TEMPLATE/">
+    <File Path=".github/ISSUE_TEMPLATE/bug-report.en.md" />
+    <File Path=".github/ISSUE_TEMPLATE/bug-report.md" />
+    <File Path=".github/ISSUE_TEMPLATE/question.en.md" />
+    <File Path=".github/ISSUE_TEMPLATE/question.md" />
+  </Folder>
+  <Folder Name="/2.Document/">
+    <File Path="doc/Code-Style.md" />
+    <File Path="doc/Compression-And-Packaging.md" />
+    <File Path="doc/Copywriting-Guide.md" />
+    <File Path="doc/CSharp.md" />
+    <File Path="doc/Entity-Framework-Core.md" />
+    <File Path="doc/Git-Commit-Message-Standard.md" />
+    <File Path="doc/Redis.md" />
+    <File Path="doc/Serializable-And-Deserialize.md" />
+  </Folder>
+  <Folder Name="/2.Libraries/">
+    <Project Path="src/AigioLTemplate.Server.Core/AigioLTemplate.Server.Core.csproj" />
+  </Folder>
+  <Folder Name="/2.Libraries/1.Reference/" />
+  <Folder Name="/2.Libraries/1.Reference/Common/">
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AdminCenter.Entities/AigioL.Common.AspNetCore.AdminCenter.Entities.shproj" Id="e6c5f93e-333f-41c9-8e27-e0046d5ce19c" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AdminCenter/AigioL.Common.AspNetCore.AdminCenter.shproj" Id="66c06857-99f9-4aa4-9504-e2f1070aa7ae" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.ApiGateway.Core/AigioL.Common.AspNetCore.ApiGateway.Core.shproj" Id="bb5339c8-0ab7-4b32-bd60-4a8004d4deae" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.ApiGateway/AigioL.Common.AspNetCore.ApiGateway.shproj" Id="b3f85f86-61ed-4d3b-8d6f-780b1ad07a60" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Analytics.Core/AigioL.Common.AspNetCore.AppCenter.Analytics.Core.shproj" Id="dff7c2b6-ce45-4ba7-b4d5-0d07fd760843" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Analytics.JobScheduler/AigioL.Common.AspNetCore.AppCenter.Analytics.JobScheduler.shproj" Id="5f7d9445-265c-4167-afcd-e90182101582" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Analytics/AigioL.Common.AspNetCore.AppCenter.Analytics.shproj" Id="4741fdd2-d3e8-43a7-a068-03d0f9859292" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Basic.Core/AigioL.Common.AspNetCore.AppCenter.Basic.Core.shproj" Id="9a99af09-34a7-46b8-8345-095b02f846e1" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Basic.JobScheduler/AigioL.Common.AspNetCore.AppCenter.Basic.JobScheduler.shproj" Id="4782b0e6-0af5-4354-815d-ec27fafbbac2" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Basic/AigioL.Common.AspNetCore.AppCenter.Basic.shproj" Id="3b025ecf-b924-4625-9635-68b1c88e3cd3" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Core.ClientSide/AigioL.Common.AspNetCore.AppCenter.Core.ClientSide.shproj" Id="4ebfea7e-a8c7-4bd0-9bf8-2f0fc039ea5c" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Core.JobScheduler/AigioL.Common.AspNetCore.AppCenter.Core.JobScheduler.shproj" Id="bf6e035e-b848-4db5-9829-2efc76ad1d08" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Core.Resources/AigioL.Common.AspNetCore.AppCenter.Core.Resources.csproj" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Core/AigioL.Common.AspNetCore.AppCenter.Core.shproj" Id="8c072252-eabc-401a-aa84-59b8b38eda49" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Identity.Core.ClientSide/AigioL.Common.AspNetCore.AppCenter.Identity.Core.ClientSide.shproj" Id="e90b47ec-ad0e-40a8-9671-e44041beea71" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Identity.Core/AigioL.Common.AspNetCore.AppCenter.Identity.Core.shproj" Id="070b8d0d-9e6a-49ea-883e-5d9cb8d470f4" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Identity.UI/AigioL.Common.AspNetCore.AppCenter.Identity.UI.csproj" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Identity/AigioL.Common.AspNetCore.AppCenter.Identity.shproj" Id="15ff553c-b7f2-4f92-8bae-eb489368c189" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Ordering.Core/AigioL.Common.AspNetCore.AppCenter.Ordering.Core.shproj" Id="be46ad26-3ee2-445a-80f2-26bc29e7b545" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Ordering.JobScheduler/AigioL.Common.AspNetCore.AppCenter.Ordering.JobScheduler.shproj" Id="cf9886f0-052e-44b5-9081-0a8ec661fe61" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Ordering/AigioL.Common.AspNetCore.AppCenter.Ordering.shproj" Id="050a2e79-a588-44b3-87b4-4c32d5af4414" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.AppCenter.Payment.JobScheduler/AigioL.Common.AspNetCore.AppCenter.Payment.JobScheduler.shproj" Id="d51747da-fec9-4a8b-b018-5b0e2e355a94" />
+    <Project Path="ref/common/src/AigioL.Common.AspNetCore.Helpers.ProgramMain/AigioL.Common.AspNetCore.Helpers.ProgramMain.shproj" Id="276306f9-8c73-4b7a-a517-e7a502cd5f2b" />
+    <Project Path="ref/common/src/AigioL.Common.Bcl.LogInit/AigioL.Common.Bcl.LogInit.shproj" Id="78490a57-3c48-4dbb-893b-a8724b6a94a7" />
+    <Project Path="ref/common/src/AigioL.Common.Bcl/AigioL.Common.Bcl.shproj" Id="86dfc3a4-0f30-40f0-af39-6e76e46d78f1" />
+    <Project Path="ref/common/src/AigioL.Common.BuildTools/AigioL.Common.BuildTools.shproj" Id="9e2ef71b-0fb8-4b45-af29-0c294675a8a8" />
+    <Project Path="ref/common/src/AigioL.Common.EntityFrameworkCore/AigioL.Common.EntityFrameworkCore.shproj" Id="a39bde5d-77a9-4136-a88e-0e2d2b0701d0" />
+    <Project Path="ref/common/src/AigioL.Common.FeishuOApi.Sdk/AigioL.Common.FeishuOApi.Sdk.shproj" Id="8b693671-817b-4e46-b1df-0f81623e3eb1" />
+    <Project Path="ref/common/src/AigioL.Common.JsonWebTokens.Entities/AigioL.Common.JsonWebTokens.Entities.shproj" Id="26839620-b9b9-4fbe-b03b-a92d5a034e8e" />
+    <Project Path="ref/common/src/AigioL.Common.JsonWebTokens.Models.Dtos/AigioL.Common.JsonWebTokens.Models.Dtos.shproj" Id="7ad8e0e7-211c-485b-a83f-bf5d35d67681" />
+    <Project Path="ref/common/src/AigioL.Common.JsonWebTokens.Models/AigioL.Common.JsonWebTokens.Models.shproj" Id="2deca514-57a3-414f-9715-c37c4a7d8b5c" />
+    <Project Path="ref/common/src/AigioL.Common.JsonWebTokens.Services/AigioL.Common.JsonWebTokens.Services.shproj" Id="fe10fe98-b87c-4ee5-a793-ac0c22fd3bc0" />
+    <Project Path="ref/common/src/AigioL.Common.Models.ApiRsp/AigioL.Common.Models.ApiRsp.shproj" Id="d9eafcce-1041-489d-a46b-27adc768a916" />
+    <Project Path="ref/common/src/AigioL.Common.Primitives.District/AigioL.Common.Primitives.District.csproj" />
+    <Project Path="ref/common/src/AigioL.Common.Primitives/AigioL.Common.Primitives.shproj" Id="2fc56f9c-d2f9-4e05-b21b-179dc776d471" />
+    <Project Path="ref/common/src/AigioL.Common.ProjectUtils/AigioL.Common.ProjectUtils.shproj" Id="13633681-22dd-4032-aa2c-8c789f0a1962" />
+    <Project Path="ref/common/src/AigioL.Common.Repositories.EntityFrameworkCore/AigioL.Common.Repositories.EntityFrameworkCore.shproj" Id="c07f1f94-4eca-426b-a7a0-80a7d6c5d220" />
+    <Project Path="ref/common/src/AigioL.Common.Repositories/AigioL.Common.Repositories.shproj" Id="fba610e0-548c-44e9-bb4e-fa609800796a" />
+    <Project Path="ref/common/src/AigioL.Common.SmsSender.Models/AigioL.Common.SmsSender.Models.shproj" Id="f7a3e2fa-2830-4eb6-b797-a1a80d93f85e" />
+    <Project Path="ref/common/src/AigioL.Common.SmsSender.Services/AigioL.Common.SmsSender.Services.shproj" Id="5238362e-d36a-430f-a92e-b9b841cd5981" />
+    <Project Path="ref/common/src/AigioL.Common.System.IOPath.FileSystem/AigioL.Common.System.IOPath.FileSystem.shproj" Id="31e68277-e8bf-4a35-bbbd-b520cc2ed821" />
+    <Project Path="ref/common/src/AigioL.Common.System.Security.Cryptography.Aes/AigioL.Common.System.Security.Cryptography.Aes.shproj" Id="bafc6195-e7f9-4e81-b1ec-0d1de60d5fdc" />
+    <Project Path="ref/common/src/AigioL.Common.System.Security.Cryptography.HashAlgorithms/AigioL.Common.System.Security.Cryptography.HashAlgorithms.shproj" Id="49917bf7-8b4f-4bbb-a3f4-df5715759605" />
+    <Project Path="ref/common/src/AigioL.Common.System.Security.Cryptography.RSA/AigioL.Common.System.Security.Cryptography.RSA.shproj" Id="dc3e79b1-9785-421d-b9aa-62d2f77f124d" />
+  </Folder>
+  <Folder Name="/3.EntryPoint/">
+    <Project Path="src/AigioLTemplate.Server.AppHost/AigioLTemplate.Server.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/3.EntryPoint/1.Microservices/" />
+  <Folder Name="/3.EntryPoint/1.Microservices/业务/" />
+  <Folder Name="/3.EntryPoint/1.Microservices/基础/">
+    <Project Path="src/AigioLTemplate.Server.ApiService.Analytics.JobScheduler/AigioLTemplate.Server.ApiService.Analytics.JobScheduler.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Analytics/AigioLTemplate.Server.ApiService.Analytics.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Basic.JobScheduler/AigioLTemplate.Server.ApiService.Basic.JobScheduler.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Basic/AigioLTemplate.Server.ApiService.Basic.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Identity/AigioLTemplate.Server.ApiService.Identity.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Ordering.JobScheduler/AigioLTemplate.Server.ApiService.Ordering.JobScheduler.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Ordering/AigioLTemplate.Server.ApiService.Ordering.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Payment.JobScheduler/AigioLTemplate.Server.ApiService.Payment.JobScheduler.csproj" />
+    <Project Path="src/AigioLTemplate.Server.ApiService.Payment/AigioLTemplate.Server.ApiService.Payment.csproj" />
+  </Folder>
+  <Folder Name="/3.EntryPoint/1.Microservices/管理后台/">
+    <Project Path="src/AigioLTemplate.Server.ApiService.AdminCenter/AigioLTemplate.Server.ApiService.AdminCenter.csproj" />
+  </Folder>
+  <Folder Name="/4.Tools/">
+    <Project Path="src/AigioLTemplate.Server.BuildTools/AigioLTemplate.Server.BuildTools.csproj" Id="cbe54b67-1743-40c1-aaeb-1d93c3bb9c0c" />
+  </Folder>
+  <Folder Name="/5.UnitTest/">
+    <Project Path="src/AigioLTemplate.Server.UnitTest/AigioLTemplate.Server.UnitTest.csproj" />
+  </Folder>
+</Solution>

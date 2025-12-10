@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\ApiService.props" />
+	<Import Project="..\ApiService.Docker.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net$(DotNet_Version)</TargetFramework>
+		<DockerfileTag>aigioltemplate-api-ms-id6</DockerfileTag>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Identity.UI\AigioL.Common.AspNetCore.AppCenter.Identity.UI.csproj" />
+		<ProjectReference Include="..\AigioLTemplate.Server.Core\AigioLTemplate.Server.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" />
+		<PackageReference Include="AspNet.Security.OpenId.Steam" />
+		<PackageReference Include="AspNet.Security.OAuth.QQ" />
+		<PackageReference Include="AspNet.Security.OAuth.Apple" />
+		<PackageReference Include="AspNet.Security.OAuth.Weixin" />
+		<PackageReference Include="AspNet.Security.OAuth.Alipay" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\AppDbContext.cs">
+			<LinkBase>Data</LinkBase>
+		</Compile>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\*.cs">
+			<LinkBase>Data\Partials</LinkBase>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Identity\Controllers\*.cs">
+			<LinkBase>Controllers</LinkBase>
+		</None>
+	</ItemGroup>
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Identity\AigioL.Common.AspNetCore.AppCenter.Identity.projitems" Label="Shared" />
+
+</Project>

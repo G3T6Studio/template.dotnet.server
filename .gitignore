@@ -666,3 +666,11 @@ target
 /src/NodeConsoleApp1/**/*.js
 /src/NodeConsoleApp1/**/*.js.map
 /src/NodeConsoleApp1/models/generator/**/*
+
+# PostgreSQL data directory
+/res/postgresql
+/res/postgresql/data
+
+# Meilisearch data directory
+/res/meilisearch
+/res/meilisearch/data

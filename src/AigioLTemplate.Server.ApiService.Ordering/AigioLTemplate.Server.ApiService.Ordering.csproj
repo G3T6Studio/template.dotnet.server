@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\ApiService.props" />
+	<Import Project="..\ApiService.Docker.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net$(DotNet_Version)</TargetFramework>
+		<DockerfileTag>aigioltemplate-api-ms-or6</DockerfileTag>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AigioLTemplate.Server.Core\AigioLTemplate.Server.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\AppDbContext.cs">
+			<LinkBase>Data</LinkBase>
+		</Compile>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\*.cs">
+			<LinkBase>Data\Partials</LinkBase>
+		</Compile>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\Ordering\*.cs">
+			<LinkBase>Data\Partials\Ordering</LinkBase>
+		</Compile>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\OrderingPayment\*.cs">
+			<LinkBase>Data\Partials\OrderingPayment</LinkBase>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Ordering\Controllers\*.cs">
+			<LinkBase>Controllers</LinkBase>
+		</None>
+		<None Include="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Ordering\Workers\*.cs">
+			<LinkBase>Workers</LinkBase>
+		</None>
+	</ItemGroup>
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Ordering\AigioL.Common.AspNetCore.AppCenter.Ordering.projitems" Label="Shared" />
+
+</Project>

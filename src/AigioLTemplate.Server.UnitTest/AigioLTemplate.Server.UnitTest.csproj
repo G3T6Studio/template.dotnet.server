@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net$(DotNet_Version)</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
+		<UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+		<TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.Testing" />
+		<PackageReference Include="coverlet.collector">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" />
+		<PackageReference Include="xunit.runner.visualstudio">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="xunit.v3" />
+		<PackageReference Include="MemoryPack" />
+		<PackageReference Include="MemoryPack.Streaming" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AigioLTemplate.Server.AppHost\AigioLTemplate.Server.AppHost.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="System.Net" />
+		<Using Include="Microsoft.Extensions.DependencyInjection" />
+		<Using Include="Aspire.Hosting.ApplicationModel" />
+		<Using Include="Aspire.Hosting.Testing" />
+		<Using Include="Xunit" />
+	</ItemGroup>
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.Bcl\AigioL.Common.Bcl.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.Bcl.LogInit\AigioL.Common.Bcl.LogInit.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.System.Security.Cryptography.RSA\AigioL.Common.System.Security.Cryptography.RSA.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.System.Security.Cryptography.HashAlgorithms\AigioL.Common.System.Security.Cryptography.HashAlgorithms.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.System.Security.Cryptography.Aes\AigioL.Common.System.Security.Cryptography.Aes.projitems" Label="Shared" />
+
+</Project>

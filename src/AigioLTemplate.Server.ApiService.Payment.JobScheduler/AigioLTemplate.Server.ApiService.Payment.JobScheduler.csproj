@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\ApiService.props" />
+	<Import Project="..\ApiService.Docker.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net$(DotNet_Version)</TargetFramework>
+		<DockerfileTag>aigioltemplate-api-job-pa5</DockerfileTag>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AigioLTemplate.Server.Core\AigioLTemplate.Server.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\AppDbContext.cs">
+			<LinkBase>Data</LinkBase>
+		</Compile>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\*.cs">
+			<LinkBase>Data\Partials</LinkBase>
+		</Compile>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\Payment\*.cs">
+			<LinkBase>Data\Partials\Payment</LinkBase>
+		</Compile>
+		<Compile Include="..\AigioLTemplate.Server.ApiService.AdminCenter\Data\Partials\OrderingPayment\*.cs">
+			<LinkBase>Data\Partials\OrderingPayment</LinkBase>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Payment.JobScheduler\Jobs\*.cs">
+			<LinkBase>Jobs</LinkBase>
+		</None>
+	</ItemGroup>
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Ordering\AigioL.Common.AspNetCore.AppCenter.Ordering.projitems" Label="Shared" />
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AppCenter.Payment.JobScheduler\AigioL.Common.AspNetCore.AppCenter.Payment.JobScheduler.projitems" Label="Shared" />
+
+</Project>

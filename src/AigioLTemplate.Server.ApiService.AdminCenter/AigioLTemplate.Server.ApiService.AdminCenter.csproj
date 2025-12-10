@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\ApiService.props" />
+	<Import Project="..\ApiService.Docker.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net$(DotNet_Version)</TargetFramework>
+		<DockerfileTag>aigioltemplate-api-bm</DockerfileTag>
+		<DefineConstants>$(DefineConstants);PROJ_DBCONTEXT_BM</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AigioLTemplate.Server.Core\AigioLTemplate.Server.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<Import Project="..\..\ref\common\src\AigioL.Common.AspNetCore.AdminCenter\AigioL.Common.AspNetCore.AdminCenter.projitems" Label="Shared" />
+
+	<ItemGroup>
+		<None Include="..\Migrations\BMDbContext\*.sql">
+			<LinkBase>Migrations</LinkBase>
+		</None>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<!-- 👇 取消 AOT 发布以兼容 EFCore 迁移操作，执行完后再还原注释 -->
+		<PublishAot>false</PublishAot>
+	</PropertyGroup>
+
+</Project>

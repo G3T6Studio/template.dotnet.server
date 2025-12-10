@@ -14,6 +14,7 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<!-- 👇 源生成器生成的 C# 临时源码文件在生成结束后是否不删除文件，用于生成错误代码时查文件内容纠正生成器，启用时会导致 VS 的 Android 热重载在生成时出错 -->
 		<!--<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>-->
+		<InvariantGlobalization>false</InvariantGlobalization>
 	</PropertyGroup>
 
 	<!-- 👇 TFM != .NET Framework 3.5 -->
@@ -23,7 +24,6 @@
 
 	<!-- 👇 程序集信息 -->
 	<PropertyGroup>
-		<Version>1.0.0.0</Version>
 	</PropertyGroup>
 
 	<!-- 👇 CompilerVisibleProperty 配置源生成器中 MSBuild Property 可见性 -->
@@ -35,6 +35,22 @@
 	<PropertyGroup>
 		<_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
 		<_SuppressWpfTrimError>true</_SuppressWpfTrimError>
+	</PropertyGroup>
+
+	<!-- 👇 请求委托生成器 (RDG) https://learn.microsoft.com/zh-cn/aspnet/core/fundamentals/aot/request-delegate-generator/rdg -->
+	<PropertyGroup>
+		<EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
+		<InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.AspNetCore.Http.Generated</InterceptorsNamespaces>
+	</PropertyGroup>
+
+	<!-- 👇 EF NativeAOT https://learn.microsoft.com/zh-cn/ef/core/performance/nativeaot-and-precompiled-queries#publishing-an-ef-nativeaot-application -->
+	<PropertyGroup>
+		<InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.EntityFrameworkCore.GeneratedInterceptors</InterceptorsNamespaces>
+	</PropertyGroup>
+
+	<!-- 👇 模型验证 https://timdeschryver.dev/blog/aspnet-10-validating-incoming-models-in-minimal-apis-->
+	<PropertyGroup>
+		<InterceptorsNamespaces>$(InterceptorsNamespaces);Microsoft.AspNetCore.Http.Validation.Generated</InterceptorsNamespaces>
 	</PropertyGroup>
 
 	<!-- 👇 CSWinRT -->
