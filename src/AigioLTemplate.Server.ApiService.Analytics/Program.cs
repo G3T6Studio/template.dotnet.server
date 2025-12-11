@@ -91,7 +91,7 @@ static void ConfigureServices(WebApplicationBuilder builder)
     builder.AddRedisDistributedCacheV2(connectionName: "cache");
 
     // 配置数据库上下文
-    const string connectionStringACKey = "g3t6";
+    const string connectionStringACKey = "aigioltemplate";
     var connectionStringAC = ProgramHelper.GetConnectionString(connectionStringACKey,
 #if DEBUG
         "00000000-0000-0000-2507-000000000001",
